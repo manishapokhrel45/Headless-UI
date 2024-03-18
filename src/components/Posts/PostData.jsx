@@ -5,24 +5,29 @@ import { Link } from "react-router-dom";
 const teamData = [
   {
     id: 1,
-    name: "Total team",
-    href: "/Team/totalteam",
+    name: "Post",
+    href: "/fetch/post",
   },
   {
     id: 2,
-    name: "New Team",
-    href: "/Team/newteam",
+    name: "Comments",
+    href: "/fetch/comment",
   },
   {
     id: 3,
-    name: "Active Team",
+    name: "Photos",
+    href: "/fetch/photo",
+  },
+  {
+    id: 4,
+    name: "Videos",
     href: "/Team/activeteam",
   },
 ];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-const Teams = () => {
+const PostData = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,7 +43,7 @@ const Teams = () => {
           <Menu.Button className="h-fit w-20  relative">
             <span className="absolute -inset-1.5 " />
             <span className="sr-only">Open dashboard menu</span>
-            <button className="h-fit w-20 text-base font-semibold">Team</button>
+            <button className="h-fit w-20 text-base font-medium ">Posts</button>
           </Menu.Button>
         </div>
         <Transition
@@ -79,4 +84,4 @@ const Teams = () => {
     </>
   );
 };
-export default Teams;
+export default PostData;

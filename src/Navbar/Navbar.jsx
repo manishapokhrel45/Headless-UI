@@ -1,13 +1,13 @@
-import { Disclosure, Menu } from '@headlessui/react'
-import MobileMenu from './components/MobileMenu'
-import NavigateLink from './NavigateLink'
-import NavButton from './NavButton';
-import ProfileDropDown from './components/ProfileDropDown'
-import NavMenu from './components/NavMenu'
-import Navpannel from './components/Navpannel'
+import { Disclosure, Menu } from "@headlessui/react";
+import MobileMenu from "./MobileMenu";
+import NavigateLink from "./NavigateLink";
+import NavButton from "./NavButton";
+import ProfileDropDown from "./ProfileDropDown";
+import NavMenu from "./NavMenu";
+import Navpannel from "./Navpannel";
 
 export function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 export default function Navbar() {
   return (
@@ -41,15 +41,15 @@ export default function Navbar() {
                   <div>
                     <ProfileDropDown />
                   </div>
-                  
+
                   <NavMenu />
                 </Menu>
               </div>
             </div>
           </div>
-          <Navpannel/>
+          <Navpannel />
         </>
       )}
     </Disclosure>
-  )
+  );
 }

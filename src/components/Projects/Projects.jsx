@@ -22,7 +22,7 @@ const teamData = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-const Teams = () => {
+const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,7 +38,9 @@ const Teams = () => {
           <Menu.Button className="h-fit w-20  relative">
             <span className="absolute -inset-1.5 " />
             <span className="sr-only">Open dashboard menu</span>
-            <button className="h-fit w-20 text-base font-semibold">Team</button>
+            <button className="h-fit w-20 text-base font-medium">
+              Projects
+            </button>
           </Menu.Button>
         </div>
         <Transition
@@ -79,4 +81,4 @@ const Teams = () => {
     </>
   );
 };
-export default Teams;
+export default Projects;
