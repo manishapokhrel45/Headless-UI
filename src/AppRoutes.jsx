@@ -11,6 +11,7 @@ import TotalTeam from "./components/Team/TotalTeam";
 import Post from "./components/Posts/Post";
 import Comments from "./components/Posts/Comments";
 import Photos from "./components/Posts/Photos";
+import PhotoDetails from "./components/Posts/PhotoDetails";
 
 // Import other components for additional routes (e.g., Settings, Services, etc.)
 
@@ -25,7 +26,9 @@ function AppRoutes() {
       <Route path="/Team/totalteam" element={<TotalTeam />} />
       <Route path="/fetch/post" element={<Post />} />
       <Route path="/fetch/comment" element={<Comments />} />
+      {/* <Route path="/fetch/photo" element={<Photos />} /> */}
       <Route path="/fetch/photo" element={<Photos />} />
+      <Route path="/photo/:id" element={<PhotoDetails />} />
     </Routes>
   );
 }
