@@ -12,6 +12,7 @@ import Post from "./components/Posts/Post";
 import Comments from "./components/Posts/Comments";
 import Photos from "./components/Posts/Photos";
 import PhotoDetails from "./components/Posts/PhotoDetails";
+import UpdateDetail from "./components/Posts/UpdateComment";
 
 // Import other components for additional routes (e.g., Settings, Services, etc.)
 
@@ -29,6 +30,7 @@ function AppRoutes() {
       {/* <Route path="/fetch/photo" element={<Photos />} /> */}
       <Route path="/fetch/photo" element={<Photos />} />
       <Route path="/photo/:id" element={<PhotoDetails />} />
+      <Route path="/comment/:id" element={<UpdateDetail />} />
     </Routes>
   );
 }

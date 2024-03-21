@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
 
   function FetchComments() {
-    fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((comments) => setComments(comments));
 
@@ -23,15 +24,17 @@ const Comments = () => {
         <div className="flex justify-center">
           <ul className="mt-4 w-[50%]">
             {comments.map((comment) => (
-              <li
-                key={comment.id}
-                className=" p-4 rounded mb-2 text-start bg-violet-100"
-              >
-                <div className="text-lg font-bold mb-2">
-                  {comment.id}.{comment.name}
-                </div>
-                <div className="text-gray-700">{comment.body}</div>
-              </li>
+              <Link to={`/comment/${comment.id}`}>
+                <li
+                  key={comment.id}
+                  className=" p-4 rounded mb-2 text-start bg-violet-100"
+                >
+                  <div className="text-lg font-bold mb-2">
+                    {comment.id}.{comment.name}
+                  </div>
+                  <div className="text-gray-700">{comment.body}</div>
+                </li>{" "}
+              </Link>
             ))}
           </ul>
         </div>
