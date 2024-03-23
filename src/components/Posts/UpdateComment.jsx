@@ -14,63 +14,65 @@ const UpdateDetail = () => {
       .then((response) => {
         setCommentDetail(response.data);
         console.log(response.data);
+        setTitle(response.data.title);
       });
   }, [id]);
   const handleUpdate = () => {
     const payload = {
       title: title,
-      body: body,
+      body,
     };
     axios
       .patch(`https://jsonplaceholder.typicode.com/posts/${id}`, payload)
       .then((response) => {
         setTitle(response.data.title);
+        setBody(response.data);
       });
   };
   const handleDelete = () => {
-    const payload = {
-      body: body,
-    };
+    const payload = {};
     axios
       .delete(`https://jsonplaceholder.typicode.com/posts/${id}`, payload)
       .then((response) => {
-        setTitle(response.data);
+        setTitle(response.data.title);
+        setBody(response.data.body);
       });
   };
 
   return (
-    <div className="">
-      <div className=" h-screen justify-center items-center flex flex-col gap-8">
-        <div>
-          {" "}
-          <label>Name: </label>
+    <div class="flex justify-center items-center h-screen bg-slate-700">
+      <div class="bg-slate-100 p-12  rounded-lg shadow-md">
+        <div class="flex mb-4">
+          <label for="name" class="text-lg font-bold mt-1 mr-2">
+            Name:
+          </label>
           <input
-            className="border "
+            id="name"
+            class="border w-full rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
             type="text"
             name="name"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter your name"
           />
-          <div>
-            <input
-              className="border p-5 mt-2"
-              type="text"
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
-            />
-          </div>
         </div>
-        <div>
-          {" "}
+        <input
+          class="border w-full rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-blue-500"
+          type="text"
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          placeholder="Enter some text"
+        />
+        <div class="flex justify-end">
           <button
             onClick={handleUpdate}
-            className="border p-2 bg-slate-400 rounded-md"
+            class="px-4 py-2 bg-green-500 text-white rounded-md focus:outline-none  mr-2"
           >
             Update
           </button>
           <button
             onClick={handleDelete}
-            className="border p-2 bg-slate-400 rounded-md"
+            class="px-4 py-2 bg-red-500 text-white rounded-md  focus:outline-none "
           >
             Delete
           </button>

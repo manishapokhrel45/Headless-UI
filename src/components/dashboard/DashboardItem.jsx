@@ -127,14 +127,10 @@ const Dashboard = () => {
       <Menu as="div" className="py-2 flex place-content-center items-center">
         <div
           onMouseEnter={() => {
-            if (menubuttonRef.current) {
-              menubuttonRef.current.click();
-            }
+            menubuttonRef.current.click();
           }}
           onMouseLeave={() => {
-            if (menubuttonRef.current) {
-              menubuttonRef.current.click();
-            }
+            menubuttonRef.current.click();
           }}
         >
           <Menu.Button
@@ -160,14 +156,10 @@ const Dashboard = () => {
         >
           <Menu.Items
             onMouseEnter={() => {
-              if (menubuttonRef.current) {
-                menubuttonRef.current.click();
-              }
+              menubuttonRef.current.click();
             }}
             onMouseLeave={() => {
-              if (menubuttonRef.current) {
-                menubuttonRef.current.click();
-              }
+              menubuttonRef.current.click();
             }}
             className="absolute top-full z-10 w-fit origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           >
